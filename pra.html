@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Profile</title>
+    <link rel="stylesheet" href="j.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile">
+                <img src="dev.png" alt="Profile Picture" class="profile-img">
+                <h1 class="name">Wiliam Gastelu</h1>
+                <p class="title">Full Stack Developer</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/your-username" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://wa.me/your-number" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="about">
+                <h2>About Me</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </section>
+            <section class="skills">
+                <h2>Skills</h2>
+                <div class="skills-wrapper">
+                    <button class="scroll-button left" onclick="scrollSkills(-1)">&lt;</button>
+                    <div class="skills-container">
+                        <div class="skill">
+                            <div class="circle" data-percent="90">
+                                <svg>
+                                    <circle cx="30" cy="30" r="28"></circle>
+                                </svg>
+                                <div class="icon"><i class="fab fa-html5"></i></div>
+                            </div>
+                            <p>HTML</p>
+                        </div>
+                        <div class="skill">
+                            <div class="circle" data-percent="85">
+                                <svg>
+                                    <circle cx="30" cy="30" r="28"></circle>
+                                </svg>
+                                <div class="icon"><i class="fab fa-css3-alt"></i></div>
+                            </div>
+                            <p>CSS</p>
+                        </div>
+                        <div class="skill">
+                            <div class="circle" data-percent="80">
+                                <svg>
+                                    <circle cx="30" cy="30" r="28"></circle>
+                                </svg>
+                                <div class="icon"><i class="fab fa-js"></i></div>
+                            </div>
+                            <p>JavaScript</p>
+                        </div>
+                        <div class="skill">
+                            <div class="circle" data-percent="75">
+                                <svg>
+                                    <circle cx="30" cy="30" r="28"></circle>
+                                </svg>
+                                <div class="icon"><i class="fab fa-python"></i></div>
+                            </div>
+                            <p>Python</p>
+                        </div>
+                        <div class="skill">
+                            <div class="circle" data-percent="70">
+                                <svg>
+                                    <circle cx="30" cy="30" r="28"></circle>
+                                </svg>
+                                <div class="icon"><i class="fab fa-react"></i></div>
+                            </div>
+                            <p>React</p>
+                        </div>
+                        <div class="skill">
+                            <div class="circle" data-percent="65">
+                                <svg>
+                                    <circle cx="30" cy="30" r="28"></circle>
+                                </svg>
+                                <div class="icon"><i class="fab fa-node-js"></i></div>
+                            </div>
+                            <p>Node.js</p>
+                        </div>
+                        <div class="skill">
+                            <div class="circle" data-percent="75">
+                                <svg>
+                                    <circle cx="30" cy="30" r="28"></circle>
+                                </svg>
+                                <div class="icon"><i class="fab fa-java"></i></div>
+                            </div>
+                            <p>Java</p>
+                        </div>
+                    </div>
+                    <button class="scroll-button right" onclick="scrollSkills(1)">&gt;</button>
+                </div>
+            </section>
+            
+            <section class="projects">
+                <h2>Proyectos</h2>
+                <div class="project-container">
+                    <div class="project" style="background-image: url('imagenes/python-project.jpg');">
+                        <h3>Python</h3>
+                        <p class="description">Sistema de ventas</p>
+                    </div>
+                    <div class="project" style="background-image: url('imagenes/java-project.jpg');">
+                        <h3>Java</h3>
+                        <p class="description">Gestion de inventario</p>
+                    </div>
+                    <div class="project" style="background-image: url('imagenes/website-project.jpg');">
+                        <h3>Website</h3>
+                        <p class="description">Pagina web.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="certificates">
+                <h2>Certificates</h2>
+                <div class="certificate-container">
+                    <div class="certificate" data-bs-toggle="modal" data-bs-target="#certificateModal" data-pdf="h1.pdf">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="certificate" data-bs-toggle="modal" data-bs-target="#certificateModal" data-pdf="h2.pdf">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <div class="certificate" data-bs-toggle="modal" data-bs-target="#certificateModal" data-pdf="h3.pdf">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="certificate" data-bs-toggle="modal" data-bs-target="#certificateModal" data-pdf="h4.pdf">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="certificate" data-bs-toggle="modal" data-bs-target="#certificateModal" data-pdf="h5.pdf">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                </div>
+            </section>
+            
+            <script>
+                function scrollSkills(direction) {
+                    const container = document.querySelector('.skills-container');
+                    const scrollAmount = container.clientWidth;
+                    container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+                }
+            </script>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Wiliam Gastelu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="certificateModal" tabindex="-1" aria-labelledby="certificateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="certificateModalLabel">Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe id="certificateFrame" src="" width="100%" height="500px"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const certificateModal = document.getElementById('certificateModal');
+        certificateModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const pdfSrc = button.getAttribute('data-pdf');
+            const certificateFrame = document.getElementById('certificateFrame');
+            certificateFrame.src = pdfSrc;
+        });
+
+        // Initialize circular progress bars
+        document.querySelectorAll('.circle').forEach(circle => {
+            const percent = circle.getAttribute('data-percent');
+            const radius = circle.querySelector('circle').r.baseVal.value;
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (percent / 100) * circumference;
+            circle.querySelector('circle').style.strokeDasharray = `${circumference} ${circumference}`;
+            circle.querySelector('circle').style.strokeDashoffset = offset;
+        });
+    </script>
+</body>
+</html>
